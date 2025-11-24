@@ -70,7 +70,11 @@ module tb_week_4_encoder_behavioral_always;
     end
     
     $display("\n───────────────────────────────────────────────────────────────────");
-    $display("Functional Tests: %0d passed, %0d failed", pass_count, fail_count);
+    if (fail_count == 0) begin
+      $display("Functional Tests: %0d passed", pass_count);
+    end else begin
+      $display("Functional Tests: %0d passed, %0d failed", pass_count, fail_count);
+    end
     
     if (pass_count == 4 && style_check_passed) begin
       $display("\n╔════════════════════════════════════════════════════════════════╗");
