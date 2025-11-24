@@ -56,11 +56,11 @@ module tb_week_4_drawing03_structural;
     
     if (style_check_passed) begin
       $display("\n╔══════════════════════════════════════════════════════════╗");
-      $display("║  ✓ STYLE CHECK PASSED - week_4_drawing03_structural    ║");
+      $display("║  ✓ ALL TESTS PASSED - week_4_drawing03_structural      ║");
       $display("╚══════════════════════════════════════════════════════════╝\n");
     end else begin
       $display("\n╔══════════════════════════════════════════════════════════╗");
-      $display("║  ✗ STYLE CHECK FAILED - week_4_drawing03_structural      ║");
+      $display("║  ✗ SOME TESTS FAILED - week_4_drawing03_structural      ║");
       $display("╚══════════════════════════════════════════════════════════╝\n");
     end
     

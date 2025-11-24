@@ -104,11 +104,7 @@ module tb_week_4_drawing01_structural;
     end
     
     $display("\n────────────────────────────────────────────────────────────");
-    if (fail_count == 0) begin
-      $display("Functional Tests: %0d passed", pass_count);
-    end else begin
-      $display("Functional Tests: %0d passed, %0d failed", pass_count, fail_count);
-    end
+    $display("Functional Tests: %0d passed, %0d failed", pass_count, fail_count);
     
     if (pass_count == 8 && style_check_passed) begin
       $display("\n╔══════════════════════════════════════════════════════════╗");
