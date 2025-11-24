@@ -6,6 +6,8 @@ module tb_week_4_encoder_behavioral_always;
   week_4_encoder_behavioral_always uut(.in(in), .out(out));
   
   integer style_check_passed;
+  integer pass_count;
+  integer fail_count;
   
   initial begin
     $dumpfile("week_4_encoder_behavioral_always.vcd");
@@ -28,8 +30,8 @@ module tb_week_4_encoder_behavioral_always;
     $display("║   TEST: 4-to-2 Encoder - Behavioral Always                    ║");
     $display("╚════════════════════════════════════════════════════════════════╝\n");
     
-    integer pass_count = 0;
-    integer fail_count = 0;
+    pass_count = 0;
+    fail_count = 0;
     
     in = 4'b0001; #10;
     if (out !== 2'b00) begin

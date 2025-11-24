@@ -6,6 +6,8 @@ module tb_week_4_decoder_behavioral_always;
   week_4_decoder_behavioral_always uut(.sel(sel), .out(out));
   
   integer style_check_passed;
+  integer pass_count;
+  integer fail_count;
   
   initial begin
     $dumpfile("week_4_decoder_behavioral_always.vcd");
@@ -28,8 +30,8 @@ module tb_week_4_decoder_behavioral_always;
     $display("║   TEST: 2-to-4 Decoder - Behavioral Always                    ║");
     $display("╚════════════════════════════════════════════════════════════════╝\n");
     
-    integer pass_count = 0;
-    integer fail_count = 0;
+    pass_count = 0;
+    fail_count = 0;
     
     sel = 2'b00; #10;
     if (out !== 4'b0001) begin

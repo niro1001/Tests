@@ -6,6 +6,7 @@ module tb_week_4_drawing03_behavioral_always;
   week_4_drawing03_behavioral_always uut(.A(A), .B(B), .C(C), .D(D), .E(E), .F(F), .G(G), .Y(Y));
   
   integer style_check_passed;
+  integer pass_count;
   
   initial begin
     $dumpfile("week_4_drawing03_behavioral_always.vcd");
@@ -28,7 +29,7 @@ module tb_week_4_drawing03_behavioral_always;
     $display("║   TEST: Drawing 03 - Challenge Circuit (Behavioral Always)      ║");
     $display("╚════════════════════════════════════════════════════════════════╝\n");
     
-    integer pass_count = 0;
+    pass_count = 0;
     
     // Test several key combinations
     A = 0; B = 0; C = 0; D = 0; E = 0; F = 0; G = 0; #10;

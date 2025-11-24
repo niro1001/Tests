@@ -6,6 +6,8 @@ module tb_week_4_mux_structural;
   week_4_mux_structural uut(.a(a), .b(b), .sel(sel), .y(y));
   
   integer style_check_passed;
+  integer pass_count;
+  integer fail_count;
   
   initial begin
     $dumpfile("week_4_mux_structural.vcd");
@@ -28,8 +30,8 @@ module tb_week_4_mux_structural;
     $display("║   TEST: 2-to-1 MUX - Structural                         ║");
     $display("╚══════════════════════════════════════════════════════════╝\n");
     
-    integer pass_count = 0;
-    integer fail_count = 0;
+    pass_count = 0;
+    fail_count = 0;
     
     a = 0; b = 0; sel = 0; #10;
     if (y !== 0) begin

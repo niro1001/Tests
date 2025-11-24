@@ -6,6 +6,8 @@ module tb_week_4_drawing02_behavioral_always;
   week_4_drawing02_behavioral_always uut(.A(A), .B(B), .C(C), .D(D), .Y(Y), .Z(Z));
   
   integer style_check_passed;
+  integer pass_count;
+  integer fail_count;
   
   initial begin
     $dumpfile("week_4_drawing02_behavioral_always.vcd");
@@ -28,8 +30,8 @@ module tb_week_4_drawing02_behavioral_always;
     $display("║   TEST: Drawing 02 - PLA Circuit (Behavioral Always)            ║");
     $display("╚════════════════════════════════════════════════════════════════╝\n");
     
-    integer pass_count = 0;
-    integer fail_count = 0;
+    pass_count = 0;
+    fail_count = 0;
     
     // Test key combinations
     A = 1; B = 1; C = 1; D = 1; #10;  // Y should be 1 (ABCD)

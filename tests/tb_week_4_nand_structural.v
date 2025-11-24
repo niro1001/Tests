@@ -6,6 +6,8 @@ module tb_week_4_nand_structural;
   week_4_nand_structural uut(.a(a), .b(b), .y(y));
   
   integer style_check_passed;
+  integer pass_count;
+  integer fail_count;
   
   initial begin
     $dumpfile("week_4_nand_structural.vcd");
@@ -28,8 +30,8 @@ module tb_week_4_nand_structural;
     $display("║   TEST: NAND Gate - Structural (week_4_nand_structural)  ║");
     $display("╚══════════════════════════════════════════════════════════╝\n");
     
-    integer pass_count = 0;
-    integer fail_count = 0;
+    pass_count = 0;
+    fail_count = 0;
     
     a = 0; b = 0; #10;
     if (y !== 1) begin

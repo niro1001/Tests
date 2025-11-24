@@ -6,6 +6,8 @@ module tb_week_4_drawing01_behavioral_always;
   week_4_drawing01_behavioral_always uut(.A(A), .B(B), .C(C), .Y(Y));
   
   integer style_check_passed;
+  integer pass_count;
+  integer fail_count;
   
   initial begin
     $dumpfile("week_4_drawing01_behavioral_always.vcd");
@@ -28,8 +30,8 @@ module tb_week_4_drawing01_behavioral_always;
     $display("║   TEST: Drawing 01 - Behavioral Always                       ║");
     $display("╚════════════════════════════════════════════════════════════════╝\n");
     
-    integer pass_count = 0;
-    integer fail_count = 0;
+    pass_count = 0;
+    fail_count = 0;
     
     // Test all 8 combinations
     A = 0; B = 0; C = 0; #10;

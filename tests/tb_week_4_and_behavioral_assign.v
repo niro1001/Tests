@@ -6,6 +6,8 @@ module tb_week_4_and_behavioral_assign;
   week_4_and_behavioral_assign uut(.a(a), .b(b), .y(y));
   
   integer style_check_passed;
+  integer pass_count;
+  integer fail_count;
   
   // Waveform dump
   initial begin
@@ -34,8 +36,8 @@ module tb_week_4_and_behavioral_assign;
     $display("Format: a | b | y (expected) | y (actual) | Status");
     $display("─────────────────────────────────────────────────────────────────");
     
-    integer pass_count = 0;
-    integer fail_count = 0;
+    pass_count = 0;
+    fail_count = 0;
     
     // Test all combinations
     a = 0; b = 0; #10;
