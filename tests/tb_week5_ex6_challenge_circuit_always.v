@@ -3,13 +3,13 @@
 module tb_week5_ex6_challenge_circuit_always;
   reg A, B, C, D, E, F, G;
   wire Y;
-  week5_ex6_challenge_circuit_behavioral_always uut(.A(A), .B(B), .C(C), .D(D), .E(E), .F(F), .G(G), .Y(Y));
+  week5_ex6_challenge_circuit_always uut(.A(A), .B(B), .C(C), .D(D), .E(E), .F(F), .G(G), .Y(Y));
   
   integer pass_count;
   integer fail_count;
   
   initial begin
-    $dumpfile("week5_ex6_challenge_circuit_behavioral_always.vcd");
+    $dumpfile("week5_ex6_challenge_circuit_always.vcd");
     $dumpvars(0, tb_week5_ex6_challenge_circuit_always);
   end
   

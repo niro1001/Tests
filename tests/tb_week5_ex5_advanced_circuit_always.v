@@ -3,13 +3,13 @@
 module tb_week5_ex5_advanced_circuit_always;
   reg A, B, C, D;
   wire Y, Z;
-  week5_ex5_advanced_circuit_behavioral_always uut(.A(A), .B(B), .C(C), .D(D), .Y(Y), .Z(Z));
+  week5_ex5_advanced_circuit_always uut(.A(A), .B(B), .C(C), .D(D), .Y(Y), .Z(Z));
   
   integer pass_count;
   integer fail_count;
   
   initial begin
-    $dumpfile("week5_ex5_advanced_circuit_behavioral_always.vcd");
+    $dumpfile("week5_ex5_advanced_circuit_always.vcd");
     $dumpvars(0, tb_week5_ex5_advanced_circuit_always);
   end
   
@@ -73,11 +73,11 @@ module tb_week5_ex5_advanced_circuit_always;
     
     if (pass_count == 5 ) begin
       $display("\n╔════════════════════════════════════════════════════════════════╗");
-      $display("║  ✓ ALL TESTS PASSED - week5_ex5_advanced_circuit_behavioral_always     ║");
+      $display("║  ✓ ALL TESTS PASSED - week5_ex5_advanced_circuit_always     ║");
       $display("╚════════════════════════════════════════════════════════════════╝\n");
     end else begin
       $display("\n╔════════════════════════════════════════════════════════════════╗");
-      $display("║  ✗ SOME TESTS WRONG - week5_ex5_advanced_circuit_behavioral_always     ║");
+      $display("║  ✗ SOME TESTS WRONG - week5_ex5_advanced_circuit_always     ║");
       $display("╚════════════════════════════════════════════════════════════════╝\n");
     end
     
