@@ -5,6 +5,9 @@ module tb_week5_ex1_and_always;
   wire y;
   week5_ex1_and_always uut(.a(a), .b(b), .y(y));
   
+  integer pass_count;
+  integer fail_count;
+  
   // Waveform dump
   initial begin
     $dumpfile("week5_ex1_and_always.vcd");
