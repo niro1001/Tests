@@ -5,7 +5,6 @@ module tb_week5_ex1_xor_assign;
   wire y;
   week5_ex1_xor_assign uut(.a(a), .b(b), .y(y));
   
-  integer style_check_passed;
   integer pass_count;
   integer fail_count;
   
@@ -14,16 +13,7 @@ module tb_week5_ex1_xor_assign;
     $dumpvars(0, tb_week5_ex1_xor_assign);
   end
   
-  initial begin
-    style_check_passed = 0;
-    $system("(grep -q \"assign\" week5/week5_ex1_xor_assign.v 2>/dev/null || findstr /C:\"assign\" week5\\week5_ex1_xor_assign.v >nul 2>&1) 2>/dev/null");
-    if ($status == 0) begin
-      style_check_passed = 1;
-      $display("✓ Style check PASSED: Found 'assign' keyword (behavioral_assign style)");
-    end else begin
-      $display("✗ Style check WRONG: 'assign' keyword not found (should use behavioral_assign style)");
-    end
-  end
+  // Style check removed - autograder handles style checking
   
   initial begin
     $display("\n╔═══════════════════════════════════════════════════════════════╗");

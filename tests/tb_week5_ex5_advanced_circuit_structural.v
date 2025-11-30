@@ -5,7 +5,6 @@ module tb_week5_ex5_advanced_circuit_structural;
   wire Y, Z;
   week5_ex5_advanced_circuit_structural uut(.A(A), .B(B), .C(C), .D(D), .Y(Y), .Z(Z));
   
-  integer style_check_passed;
   integer pass_count;
   integer fail_count;
   
@@ -14,16 +13,7 @@ module tb_week5_ex5_advanced_circuit_structural;
     $dumpvars(0, tb_week5_ex5_advanced_circuit_structural);
   end
   
-  initial begin
-    style_check_passed = 0;
-    $system("(grep -q \"wire\" week5/week5_ex5_advanced_circuit_structural.v 2>/dev/null || findstr /C:\"wire\" week5\\week5_ex5_advanced_circuit_structural.v >nul 2>&1) 2>/dev/null");
-    if ($status == 0) begin
-      style_check_passed = 1;
-      $display("✓ Style check PASSED: Found 'wire' keyword (structural style)");
-    end else begin
-      $display("✗ Style check WRONG: 'wire' keyword not found (should use structural style)");
-    end
-  end
+  // Style check removed - autograder handles style checking
   
   initial begin
     $display("\n╔══════════════════════════════════════════════════════════╗");

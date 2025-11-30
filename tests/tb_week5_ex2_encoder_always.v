@@ -5,7 +5,6 @@ module tb_week5_ex2_encoder_always;
   wire [1:0] out;
   week5_ex2_encoder_always uut(.in(in), .out(out));
   
-  integer style_check_passed;
   integer pass_count;
   integer fail_count;
   
@@ -14,16 +13,7 @@ module tb_week5_ex2_encoder_always;
     $dumpvars(0, tb_week5_ex2_encoder_always);
   end
   
-  initial begin
-    style_check_passed = 0;
-    $system("(grep -q \"always\" week5/week5_ex2_encoder_always.v 2>/dev/null || findstr /C:\"always\" week5\\week5_ex2_encoder_always.v >nul 2>&1) 2>/dev/null");
-    if ($status == 0) begin
-      style_check_passed = 1;
-      $display("✓ Style check PASSED: Found 'always' keyword (behavioral_always style)");
-    end else begin
-      $display("✗ Style check WRONG: 'always' keyword not found (should use behavioral_always style)");
-    end
-  end
+  // Style check removed - autograder handles style checking
   
   initial begin
     $display("\n╔════════════════════════════════════════════════════════════════╗");
