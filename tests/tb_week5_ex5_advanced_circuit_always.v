@@ -16,7 +16,7 @@ module tb_week5_ex5_advanced_circuit_always;
   
   initial begin
     style_check_passed = 0;
-    $system("findstr /C:\"always\" week5\\week5_ex5_advanced_circuit_behavioral_always.v > nul");
+    $system("(grep -q \"always\" week5/week5_ex5_advanced_circuit_behavioral_always.v 2>/dev/null || findstr /C:\"always\" week5\\week5_ex5_advanced_circuit_behavioral_always.v >nul 2>&1) 2>/dev/null");
     if ($status == 0) begin
       style_check_passed = 1;
       $display("✓ Style check PASSED: Found 'always' keyword (behavioral_always style)");

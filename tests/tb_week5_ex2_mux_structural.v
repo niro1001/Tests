@@ -16,7 +16,7 @@ module tb_week5_ex2_mux_structural;
   
   initial begin
     style_check_passed = 0;
-    $system("findstr /C:\"wire\" week5\\week5_ex2_mux_structural.v > nul");
+    $system("(grep -q \"wire\" week5/week5_ex2_mux_structural.v 2>/dev/null || findstr /C:\"wire\" week5\\week5_ex2_mux_structural.v >nul 2>&1) 2>/dev/null");
     if ($status == 0) begin
       style_check_passed = 1;
       $display("✓ Style check PASSED: Found 'wire' keyword (structural style)");

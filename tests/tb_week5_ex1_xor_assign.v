@@ -16,7 +16,7 @@ module tb_week5_ex1_xor_assign;
   
   initial begin
     style_check_passed = 0;
-    $system("findstr /C:\"assign\" week5\\week5_ex1_xor_assign.v > nul");
+    $system("(grep -q \"assign\" week5/week5_ex1_xor_assign.v 2>/dev/null || findstr /C:\"assign\" week5\\week5_ex1_xor_assign.v >nul 2>&1) 2>/dev/null");
     if ($status == 0) begin
       style_check_passed = 1;
       $display("✓ Style check PASSED: Found 'assign' keyword (behavioral_assign style)");
