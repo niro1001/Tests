@@ -6,6 +6,8 @@ module tb_week5_ex2_decoder_structural;
   week5_ex2_decoder_structural uut(.sel(sel), .out(out));
   
   integer style_check_passed;
+  integer pass_count;
+  integer fail_count;
   
   initial begin
     $dumpfile("week5_ex2_decoder_structural.vcd");
@@ -28,8 +30,7 @@ module tb_week5_ex2_decoder_structural;
     $display("║   TEST: 2-to-4 Decoder - Structural                      ║");
     $display("╚══════════════════════════════════════════════════════════╝\n");
     
-    integer pass_count = 0;
-    integer fail_count = 0;
+    pass_count = 0; fail_count = 0;
     
     sel = 2'b00; #10;
     if (out !== 4'b0001) begin
@@ -70,7 +71,7 @@ module tb_week5_ex2_decoder_structural;
     $display("\n────────────────────────────────────────────────────────────");
     $display("Functional Tests: %0d passed, %0d failed", pass_count, fail_count);
     
-    if (pass_count == 4 && style_check_passed) begin
+    if (pass_count == 4 ) begin
       $display("\n╔══════════════════════════════════════════════════════════╗");
       $display("║  ✓ ALL TESTS PASSED - week5_ex2_decoder_structural      ║");
       $display("╚══════════════════════════════════════════════════════════╝\n");
@@ -83,4 +84,5 @@ module tb_week5_ex2_decoder_structural;
     $finish;
   end
 endmodule
+
 

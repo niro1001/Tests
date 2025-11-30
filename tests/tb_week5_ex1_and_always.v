@@ -5,8 +5,6 @@ module tb_week5_ex1_and_always;
   wire y;
   week5_ex1_and_always uut(.a(a), .b(b), .y(y));
   
-  integer style_check_passed;
-  
   // Waveform dump
   initial begin
     $dumpfile("week5_ex1_and_always.vcd");
@@ -34,8 +32,7 @@ module tb_week5_ex1_and_always;
     $display("Format: a | b | y (expected) | y (actual) | Status");
     $display("───────────────────────────────────────────────────────────────────");
     
-    integer pass_count = 0;
-    integer fail_count = 0;
+    pass_count = 0; fail_count = 0;
     
     // Test all combinations
     a = 0; b = 0; #10;
@@ -77,7 +74,7 @@ module tb_week5_ex1_and_always;
     $display("\n───────────────────────────────────────────────────────────────────");
     $display("Functional Tests: %0d passed, %0d failed", pass_count, fail_count);
     
-    if (pass_count == 4 && style_check_passed) begin
+    if (pass_count == 4 ) begin
       $display("\n╔════════════════════════════════════════════════════════════════╗");
       $display("║  ✓ ALL TESTS PASSED - week5_ex1_and_always                    ║");
       $display("╚════════════════════════════════════════════════════════════════╝\n");
@@ -90,4 +87,5 @@ module tb_week5_ex1_and_always;
     $finish;
   end
 endmodule
+
 

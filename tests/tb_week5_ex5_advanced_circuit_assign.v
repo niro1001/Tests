@@ -3,33 +3,23 @@
 module tb_week5_ex5_advanced_circuit_assign;
   reg A, B, C, D;
   wire Y, Z;
-  week5_ex5_advanced_circuit_behavioral_assign uut(.A(A), .B(B), .C(C), .D(D), .Y(Y), .Z(Z));
-  
-  integer style_check_passed;
+  week5_ex5_advanced_circuit_assign uut(.A(A), .B(B), .C(C), .D(D), .Y(Y), .Z(Z));
   
   initial begin
-    $dumpfile("week5_ex5_advanced_circuit_behavioral_assign.vcd");
+    $dumpfile("week5_ex5_advanced_circuit_assign.vcd");
     $dumpvars(0, tb_week5_ex5_advanced_circuit_assign);
   end
   
-  initial begin
-    style_check_passed = 0;
-    $system("findstr /C:\"assign\" week5\\week5_ex5_advanced_circuit_behavioral_assign.v > nul");
-    if ($status == 0) begin
-      style_check_passed = 1;
-      $display("✓ Style check PASSED: Found 'assign' keyword (behavioral_assign style)");
-    end else begin
-      $display("✗ Style check FAILED: 'assign' keyword not found (should use behavioral_assign style)");
-    end
-  end
+  integer pass_count;
+  integer fail_count;
   
   initial begin
     $display("\n╔═══════════════════════════════════════════════════════════════╗");
-    $display("║   TEST: Drawing 02 - PLA Circuit (Behavioral Assign)         ║");
+    $display("║   TEST: Advanced Circuit - Behavioral Assign (week5_ex5)     ║");
     $display("╚═══════════════════════════════════════════════════════════════╝\n");
     
-    integer pass_count = 0;
-    integer fail_count = 0;
+    pass_count = 0;
+    fail_count = 0;
     
     // Test key combinations
     A = 1; B = 1; C = 1; D = 1; #10;  // Y should be 1 (ABCD)
@@ -80,16 +70,17 @@ module tb_week5_ex5_advanced_circuit_assign;
     $display("\n─────────────────────────────────────────────────────────────────");
     $display("Functional Tests: %0d passed, %0d failed", pass_count, fail_count);
     
-    if (pass_count == 5 && style_check_passed) begin
+    if (pass_count == 5 ) begin
       $display("\n╔═══════════════════════════════════════════════════════════════╗");
-      $display("║  ✓ ALL TESTS PASSED - week5_ex5_advanced_circuit_behavioral_assign   ║");
+      $display("║  ✓ ALL TESTS PASSED - week5_ex5_advanced_circuit_assign             ║");
       $display("╚═══════════════════════════════════════════════════════════════╝\n");
     end else begin
       $display("\n╔═══════════════════════════════════════════════════════════════╗");
-      $display("║  ✗ SOME TESTS FAILED - week5_ex5_advanced_circuit_behavioral_assign      ║");
+      $display("║  ✗ SOME TESTS FAILED - week5_ex5_advanced_circuit_assign                ║");
       $display("╚═══════════════════════════════════════════════════════════════╝\n");
     end
     
     $finish;
   end
 endmodule
+

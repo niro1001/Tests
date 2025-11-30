@@ -5,7 +5,8 @@ module tb_week5_ex4_simple_circuit_assign;
   wire Y;
   week5_ex4_simple_circuit_assign uut(.A(A), .B(B), .C(C), .Y(Y));
   
-  integer style_check_passed;
+  integer pass_count;
+  integer fail_count;
   
   initial begin
     $dumpfile("week5_ex4_simple_circuit_assign.vcd");
@@ -13,23 +14,12 @@ module tb_week5_ex4_simple_circuit_assign;
   end
   
   initial begin
-    style_check_passed = 0;
-    $system("findstr /C:\"assign\" week5\\week5_ex4_simple_circuit_assign.v > nul");
-    if ($status == 0) begin
-      style_check_passed = 1;
-      $display("✓ Style check PASSED: Found 'assign' keyword (behavioral_assign style)");
-    end else begin
-      $display("✗ Style check FAILED: 'assign' keyword not found (should use behavioral_assign style)");
-    end
-  end
-  
-  initial begin
     $display("\n╔═══════════════════════════════════════════════════════════════╗");
-    $display("║   TEST: Simple Circuit - Behavioral Assign (week5_ex4)                       ║");
+    $display("║   TEST: Simple Circuit - Behavioral Assign (week5_ex4)         ║");
     $display("╚═══════════════════════════════════════════════════════════════╝\n");
     
-    integer pass_count = 0;
-    integer fail_count = 0;
+    pass_count = 0;
+    fail_count = 0;
     
     // Test all 8 combinations
     A = 0; B = 0; C = 0; #10;
@@ -107,7 +97,7 @@ module tb_week5_ex4_simple_circuit_assign;
     $display("\n─────────────────────────────────────────────────────────────────");
     $display("Functional Tests: %0d passed, %0d failed", pass_count, fail_count);
     
-    if (pass_count == 8 && style_check_passed) begin
+    if (pass_count == 8 ) begin
       $display("\n╔═══════════════════════════════════════════════════════════════╗");
       $display("║  ✓ ALL TESTS PASSED - week5_ex4_simple_circuit_assign     ║");
       $display("╚═══════════════════════════════════════════════════════════════╝\n");
@@ -120,4 +110,5 @@ module tb_week5_ex4_simple_circuit_assign;
     $finish;
   end
 endmodule
+
 

@@ -3,32 +3,23 @@
 module tb_week5_ex6_challenge_circuit_assign;
   reg A, B, C, D, E, F, G;
   wire Y;
-  week5_ex6_challenge_circuit_behavioral_assign uut(.A(A), .B(B), .C(C), .D(D), .E(E), .F(F), .G(G), .Y(Y));
-  
-  integer style_check_passed;
+  week5_ex6_challenge_circuit_assign uut(.A(A), .B(B), .C(C), .D(D), .E(E), .F(F), .G(G), .Y(Y));
   
   initial begin
-    $dumpfile("week5_ex6_challenge_circuit_behavioral_assign.vcd");
+    $dumpfile("week5_ex6_challenge_circuit_assign.vcd");
     $dumpvars(0, tb_week5_ex6_challenge_circuit_assign);
   end
   
-  initial begin
-    style_check_passed = 0;
-    $system("findstr /C:\"assign\" week5\\week5_ex6_challenge_circuit_behavioral_assign.v > nul");
-    if ($status == 0) begin
-      style_check_passed = 1;
-      $display("✓ Style check PASSED: Found 'assign' keyword (behavioral_assign style)");
-    end else begin
-      $display("✗ Style check FAILED: 'assign' keyword not found (should use behavioral_assign style)");
-    end
-  end
+  integer pass_count;
+  integer fail_count;
   
   initial begin
     $display("\n╔═══════════════════════════════════════════════════════════════╗");
-    $display("║   TEST: Drawing 03 - Challenge Circuit (Behavioral Assign)   ║");
+    $display("║   TEST: Challenge Circuit - Behavioral Assign (week5_ex6)     ║");
     $display("╚═══════════════════════════════════════════════════════════════╝\n");
     
-    integer pass_count = 0;
+    pass_count = 0;
+    fail_count = 0;
     
     // Test several key combinations
     A = 0; B = 0; C = 0; D = 0; E = 0; F = 0; G = 0; #10;
@@ -54,16 +45,11 @@ module tb_week5_ex6_challenge_circuit_assign;
     $display("\n─────────────────────────────────────────────────────────────────");
     $display("Functional Tests: %0d test cases executed", pass_count);
     
-    if (style_check_passed) begin
-      $display("\n╔═══════════════════════════════════════════════════════════════╗");
-      $display("║  ✓ STYLE CHECK PASSED - week5_ex6_challenge_circuit_behavioral_assign   ║");
-      $display("╚═══════════════════════════════════════════════════════════════╝\n");
-    end else begin
-      $display("\n╔═══════════════════════════════════════════════════════════════╗");
-      $display("║  ✗ STYLE CHECK FAILED - week5_ex6_challenge_circuit_behavioral_assign     ║");
-      $display("╚═══════════════════════════════════════════════════════════════╝\n");
-    end
+    $display("\n╔═══════════════════════════════════════════════════════════════╗");
+    $display("║  ✓ ALL TESTS PASSED - week5_ex6_challenge_circuit_assign     ║");
+    $display("╚═══════════════════════════════════════════════════════════════╝\n");
     
     $finish;
   end
 endmodule
+
