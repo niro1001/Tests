@@ -21,7 +21,7 @@ module tb_week5_ex1_xor_assign;
       style_check_passed = 1;
       $display("✓ Style check PASSED: Found 'assign' keyword (behavioral_assign style)");
     end else begin
-      $display("✗ Style check INCORRECT: 'assign' keyword not found (should use behavioral_assign style)");
+      $display("✗ Style check WRONG: 'assign' keyword not found (should use behavioral_assign style)");
     end
   end
   
@@ -69,7 +69,7 @@ module tb_week5_ex1_xor_assign;
     end
     
     $display("\n─────────────────────────────────────────────────────────────────");
-    $display("Functional Tests: %0d passed, %0d incorrect", pass_count, fail_count);
+    $display("Functional Tests: %0d passed, %0d wrong", pass_count, fail_count);
     
     if (pass_count == 4 ) begin
       $display("\n╔═══════════════════════════════════════════════════════════════╗");
@@ -77,7 +77,7 @@ module tb_week5_ex1_xor_assign;
       $display("╚═══════════════════════════════════════════════════════════════╝\n");
     end else begin
       $display("\n╔═══════════════════════════════════════════════════════════════╗");
-      $display("║  ✗ SOME TESTS INCORRECT - week5_ex1_xor_assign                  ║");
+      $display("║  ✗ SOME TESTS WRONG - week5_ex1_xor_assign                  ║");
       $display("╚═══════════════════════════════════════════════════════════════╝\n");
     end
     

@@ -25,7 +25,7 @@ module tb_week5_ex2_mux_assign;
       $display("✗ WRONG: a=%b, b=%b, sel=%b → Expected y=%b, got y=%b", a, b, sel, 1'b0, y);
       fail_count = fail_count + 1;
     end else begin
-      $display("✓ PASS: a=%b | b=%b | sel=%b | y=%b (correct)", a, b, sel, y);
+      $display("✓ PASS: a=%b, b=%b, sel=%b | y=%b (correct)", a, b, sel, y);
       pass_count = pass_count + 1;
     end
     
@@ -93,7 +93,7 @@ module tb_week5_ex2_mux_assign;
     end
     
     $display("\n─────────────────────────────────────────────────────────────────");
-    $display("Functional Tests: %0d passed, %0d incorrect", pass_count, fail_count);
+    $display("Functional Tests: %0d passed, %0d wrong", pass_count, fail_count);
     
     if (pass_count == 8) begin
       $display("\n╔═══════════════════════════════════════════════════════════════╗");
@@ -101,7 +101,7 @@ module tb_week5_ex2_mux_assign;
       $display("╚═══════════════════════════════════════════════════════════════╝\n");
     end else begin
       $display("\n╔═══════════════════════════════════════════════════════════════╗");
-      $display("║  ✗ SOME TESTS INCORRECT - week5_ex2_mux_assign                  ║");
+      $display("║  ✗ SOME TESTS WRONG - week5_ex2_mux_assign                  ║");
       $display("╚═══════════════════════════════════════════════════════════════╝\n");
     end
     

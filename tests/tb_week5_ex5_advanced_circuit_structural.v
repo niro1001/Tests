@@ -21,7 +21,7 @@ module tb_week5_ex5_advanced_circuit_structural;
       style_check_passed = 1;
       $display("✓ Style check PASSED: Found 'wire' keyword (structural style)");
     end else begin
-      $display("✗ Style check INCORRECT: 'wire' keyword not found (should use structural style)");
+      $display("✗ Style check WRONG: 'wire' keyword not found (should use structural style)");
     end
   end
   
@@ -81,7 +81,7 @@ module tb_week5_ex5_advanced_circuit_structural;
     end
     
     $display("\n────────────────────────────────────────────────────────────");
-    $display("Functional Tests: %0d passed, %0d incorrect", pass_count, fail_count);
+    $display("Functional Tests: %0d passed, %0d wrong", pass_count, fail_count);
     
     if (pass_count == 5 ) begin
       $display("\n╔══════════════════════════════════════════════════════════╗");
@@ -89,7 +89,7 @@ module tb_week5_ex5_advanced_circuit_structural;
       $display("╚══════════════════════════════════════════════════════════╝\n");
     end else begin
       $display("\n╔══════════════════════════════════════════════════════════╗");
-      $display("║  ✗ SOME TESTS INCORRECT - week5_ex5_advanced_circuit_structural      ║");
+      $display("║  ✗ SOME TESTS WRONG - week5_ex5_advanced_circuit_structural      ║");
       $display("╚══════════════════════════════════════════════════════════╝\n");
     end
     

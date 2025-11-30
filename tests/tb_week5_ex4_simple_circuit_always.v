@@ -21,7 +21,7 @@ module tb_week5_ex4_simple_circuit_always;
       style_check_passed = 1;
       $display("✓ Style check PASSED: Found 'always' keyword (behavioral_always style)");
     end else begin
-      $display("✗ Style check INCORRECT: 'always' keyword not found (should use behavioral_always style)");
+      $display("✗ Style check WRONG: 'always' keyword not found (should use behavioral_always style)");
     end
   end
   
@@ -106,7 +106,7 @@ module tb_week5_ex4_simple_circuit_always;
     end
     
     $display("\n───────────────────────────────────────────────────────────────────");
-    $display("Functional Tests: %0d passed, %0d incorrect", pass_count, fail_count);
+    $display("Functional Tests: %0d passed, %0d wrong", pass_count, fail_count);
     
     if (pass_count == 8 ) begin
       $display("\n╔════════════════════════════════════════════════════════════════╗");
@@ -114,7 +114,7 @@ module tb_week5_ex4_simple_circuit_always;
       $display("╚════════════════════════════════════════════════════════════════╝\n");
     end else begin
       $display("\n╔════════════════════════════════════════════════════════════════╗");
-      $display("║  ✗ SOME TESTS INCORRECT - week5_ex4_simple_circuit_always     ║");
+      $display("║  ✗ SOME TESTS WRONG - week5_ex4_simple_circuit_always     ║");
       $display("╚════════════════════════════════════════════════════════════════╝\n");
     end
     

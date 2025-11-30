@@ -95,7 +95,7 @@ module tb_week5_ex4_simple_circuit_assign;
     end
     
     $display("\n─────────────────────────────────────────────────────────────────");
-    $display("Functional Tests: %0d passed, %0d incorrect", pass_count, fail_count);
+    $display("Functional Tests: %0d passed, %0d wrong", pass_count, fail_count);
     
     if (pass_count == 8 ) begin
       $display("\n╔═══════════════════════════════════════════════════════════════╗");
@@ -103,7 +103,7 @@ module tb_week5_ex4_simple_circuit_assign;
       $display("╚═══════════════════════════════════════════════════════════════╝\n");
     end else begin
       $display("\n╔═══════════════════════════════════════════════════════════════╗");
-      $display("║  ✗ SOME TESTS INCORRECT - week5_ex4_simple_circuit_assign     ║");
+      $display("║  ✗ SOME TESTS WRONG - week5_ex4_simple_circuit_assign     ║");
       $display("╚═══════════════════════════════════════════════════════════════╝\n");
     end
     

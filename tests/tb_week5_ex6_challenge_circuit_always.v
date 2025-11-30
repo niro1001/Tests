@@ -21,7 +21,7 @@ module tb_week5_ex6_challenge_circuit_always;
       style_check_passed = 1;
       $display("✓ Style check PASSED: Found 'always' keyword (behavioral_always style)");
     end else begin
-      $display("✗ Style check INCORRECT: 'always' keyword not found (should use behavioral_always style)");
+      $display("✗ Style check WRONG: 'always' keyword not found (should use behavioral_always style)");
     end
   end
   
@@ -62,7 +62,7 @@ module tb_week5_ex6_challenge_circuit_always;
       $display("╚════════════════════════════════════════════════════════════════╝\n");
     end else begin
       $display("\n╔════════════════════════════════════════════════════════════════╗");
-      $display("║  ✗ STYLE CHECK INCORRECT - week5_ex6_challenge_circuit_behavioral_always     ║");
+      $display("║  ✗ STYLE CHECK WRONG - week5_ex6_challenge_circuit_behavioral_always     ║");
       $display("╚════════════════════════════════════════════════════════════════╝\n");
     end
     
