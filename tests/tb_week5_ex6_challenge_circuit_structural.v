@@ -21,7 +21,7 @@ module tb_week5_ex6_challenge_circuit_structural;
       style_check_passed = 1;
       $display("✓ Style check PASSED: Found 'wire' keyword (structural style)");
     end else begin
-      $display("✗ Style check FAILED: 'wire' keyword not found (should use structural style)");
+      $display("✗ Style check INCORRECT: 'wire' keyword not found (should use structural style)");
     end
   end
   
@@ -63,7 +63,7 @@ module tb_week5_ex6_challenge_circuit_structural;
       $display("╚══════════════════════════════════════════════════════════╝\n");
     end else begin
       $display("\n╔══════════════════════════════════════════════════════════╗");
-      $display("║  ✗ STYLE CHECK FAILED - week5_ex6_challenge_circuit_structural      ║");
+      $display("║  ✗ STYLE CHECK INCORRECT - week5_ex6_challenge_circuit_structural      ║");
       $display("╚══════════════════════════════════════════════════════════╝\n");
     end
     

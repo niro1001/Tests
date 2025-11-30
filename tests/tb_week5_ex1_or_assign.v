@@ -23,7 +23,7 @@ module tb_week5_ex1_or_assign;
     
     a = 0; b = 0; #10;
     if (y !== 0) begin
-      $display("✗ FAIL: a=%b, b=%b → Expected y=%b, got y=%b", a, b, 1'b0, y);
+      $display("✗ WRONG: a=%b, b=%b → Expected y=%b, got y=%b", a, b, 1'b0, y);
       fail_count = fail_count + 1;
     end else begin
       $display("✓ PASS: a=%b | b=%b | y=%b (correct)", a, b, y);
@@ -32,7 +32,7 @@ module tb_week5_ex1_or_assign;
     
     a = 0; b = 1; #10;
     if (y !== 1) begin
-      $display("✗ FAIL: a=%b, b=%b → Expected y=%b, got y=%b", a, b, 1'b1, y);
+      $display("✗ WRONG: a=%b, b=%b → Expected y=%b, got y=%b", a, b, 1'b1, y);
       fail_count = fail_count + 1;
     end else begin
       $display("✓ PASS: a=%b | b=%b | y=%b (correct)", a, b, y);
@@ -41,7 +41,7 @@ module tb_week5_ex1_or_assign;
     
     a = 1; b = 0; #10;
     if (y !== 1) begin
-      $display("✗ FAIL: a=%b, b=%b → Expected y=%b, got y=%b", a, b, 1'b1, y);
+      $display("✗ WRONG: a=%b, b=%b → Expected y=%b, got y=%b", a, b, 1'b1, y);
       fail_count = fail_count + 1;
     end else begin
       $display("✓ PASS: a=%b | b=%b | y=%b (correct)", a, b, y);
@@ -50,7 +50,7 @@ module tb_week5_ex1_or_assign;
     
     a = 1; b = 1; #10;
     if (y !== 1) begin
-      $display("✗ FAIL: a=%b, b=%b → Expected y=%b, got y=%b", a, b, 1'b1, y);
+      $display("✗ WRONG: a=%b, b=%b → Expected y=%b, got y=%b", a, b, 1'b1, y);
       fail_count = fail_count + 1;
     end else begin
       $display("✓ PASS: a=%b | b=%b | y=%b (correct)", a, b, y);
@@ -58,7 +58,7 @@ module tb_week5_ex1_or_assign;
     end
     
     $display("\n─────────────────────────────────────────────────────────────────");
-    $display("Functional Tests: %0d passed, %0d failed", pass_count, fail_count);
+    $display("Functional Tests: %0d passed, %0d incorrect", pass_count, fail_count);
     
     if (pass_count == 4 ) begin
       $display("\n╔═══════════════════════════════════════════════════════════════╗");
@@ -66,7 +66,7 @@ module tb_week5_ex1_or_assign;
       $display("╚═══════════════════════════════════════════════════════════════╝\n");
     end else begin
       $display("\n╔═══════════════════════════════════════════════════════════════╗");
-      $display("║  ✗ SOME TESTS FAILED - week5_ex1_or_assign                  ║");
+      $display("║  ✗ SOME TESTS INCORRECT - week5_ex1_or_assign                  ║");
       $display("╚═══════════════════════════════════════════════════════════════╝\n");
     end
     

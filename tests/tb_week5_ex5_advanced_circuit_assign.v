@@ -24,7 +24,7 @@ module tb_week5_ex5_advanced_circuit_assign;
     // Test key combinations
     A = 1; B = 1; C = 1; D = 1; #10;  // Y should be 1 (ABCD)
     if (Y !== 1 || Z !== 0) begin
-      $display("✗ FAIL: A=%b, B=%b, C=%b, D=%b → Expected Y=%b, Z=%b, got Y=%b, Z=%b", A, B, C, D, 1, 0, Y, Z);
+      $display("✗ WRONG: A=%b, B=%b, C=%b, D=%b → Expected Y=%b, Z=%b, got Y=%b, Z=%b", A, B, C, D, 1, 0, Y, Z);
       fail_count = fail_count + 1;
     end else begin
       $display("✓ PASS: A=%b, B=%b, C=%b, D=%b → Y=%b, Z=%b (correct)", A, B, C, D, Y, Z);
@@ -33,7 +33,7 @@ module tb_week5_ex5_advanced_circuit_assign;
     
     A = 1; B = 1; C = 1; D = 0; #10;  // Z should be 1 (ABCD')
     if (Y !== 0 || Z !== 1) begin
-      $display("✗ FAIL: A=%b, B=%b, C=%b, D=%b → Expected Y=%b, Z=%b, got Y=%b, Z=%b", A, B, C, D, 0, 1, Y, Z);
+      $display("✗ WRONG: A=%b, B=%b, C=%b, D=%b → Expected Y=%b, Z=%b, got Y=%b, Z=%b", A, B, C, D, 0, 1, Y, Z);
       fail_count = fail_count + 1;
     end else begin
       $display("✓ PASS: A=%b, B=%b, C=%b, D=%b → Y=%b, Z=%b (correct)", A, B, C, D, Y, Z);
@@ -42,7 +42,7 @@ module tb_week5_ex5_advanced_circuit_assign;
     
     A = 1; B = 0; C = 1; D = 1; #10;  // Y should be 1 (AB'CD)
     if (Y !== 1 || Z !== 0) begin
-      $display("✗ FAIL: A=%b, B=%b, C=%b, D=%b → Expected Y=%b, Z=%b, got Y=%b, Z=%b", A, B, C, D, 1, 0, Y, Z);
+      $display("✗ WRONG: A=%b, B=%b, C=%b, D=%b → Expected Y=%b, Z=%b, got Y=%b, Z=%b", A, B, C, D, 1, 0, Y, Z);
       fail_count = fail_count + 1;
     end else begin
       $display("✓ PASS: A=%b, B=%b, C=%b, D=%b → Y=%b, Z=%b (correct)", A, B, C, D, Y, Z);
@@ -51,7 +51,7 @@ module tb_week5_ex5_advanced_circuit_assign;
     
     A = 0; B = 1; C = 0; D = 1; #10;  // Z should be 1 (A'BC'D)
     if (Y !== 0 || Z !== 1) begin
-      $display("✗ FAIL: A=%b, B=%b, C=%b, D=%b → Expected Y=%b, Z=%b, got Y=%b, Z=%b", A, B, C, D, 0, 1, Y, Z);
+      $display("✗ WRONG: A=%b, B=%b, C=%b, D=%b → Expected Y=%b, Z=%b, got Y=%b, Z=%b", A, B, C, D, 0, 1, Y, Z);
       fail_count = fail_count + 1;
     end else begin
       $display("✓ PASS: A=%b, B=%b, C=%b, D=%b → Y=%b, Z=%b (correct)", A, B, C, D, Y, Z);
@@ -60,7 +60,7 @@ module tb_week5_ex5_advanced_circuit_assign;
     
     A = 0; B = 0; C = 0; D = 0; #10;  // Y should be 1 (A'B'C'D')
     if (Y !== 1 || Z !== 0) begin
-      $display("✗ FAIL: A=%b, B=%b, C=%b, D=%b → Expected Y=%b, Z=%b, got Y=%b, Z=%b", A, B, C, D, 1, 0, Y, Z);
+      $display("✗ WRONG: A=%b, B=%b, C=%b, D=%b → Expected Y=%b, Z=%b, got Y=%b, Z=%b", A, B, C, D, 1, 0, Y, Z);
       fail_count = fail_count + 1;
     end else begin
       $display("✓ PASS: A=%b, B=%b, C=%b, D=%b → Y=%b, Z=%b (correct)", A, B, C, D, Y, Z);
@@ -68,7 +68,7 @@ module tb_week5_ex5_advanced_circuit_assign;
     end
     
     $display("\n─────────────────────────────────────────────────────────────────");
-    $display("Functional Tests: %0d passed, %0d failed", pass_count, fail_count);
+    $display("Functional Tests: %0d passed, %0d incorrect", pass_count, fail_count);
     
     if (pass_count == 5 ) begin
       $display("\n╔═══════════════════════════════════════════════════════════════╗");
@@ -76,7 +76,7 @@ module tb_week5_ex5_advanced_circuit_assign;
       $display("╚═══════════════════════════════════════════════════════════════╝\n");
     end else begin
       $display("\n╔═══════════════════════════════════════════════════════════════╗");
-      $display("║  ✗ SOME TESTS FAILED - week5_ex5_advanced_circuit_assign                ║");
+      $display("║  ✗ SOME TESTS INCORRECT - week5_ex5_advanced_circuit_assign                ║");
       $display("╚═══════════════════════════════════════════════════════════════╝\n");
     end
     

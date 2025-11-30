@@ -24,7 +24,7 @@ module tb_week5_ex4_simple_circuit_assign;
     // Test all 8 combinations
     A = 0; B = 0; C = 0; #10;
     if (Y !== ((~A & ~B) | (B & C))) begin
-      $display("✗ FAIL: A=%b, B=%b, C=%b → Expected Y=%b, got Y=%b", A, B, C, (~A & ~B) | (B & C), Y);
+      $display("✗ WRONG: A=%b, B=%b, C=%b → Expected Y=%b, got Y=%b", A, B, C, (~A & ~B) | (B & C), Y);
       fail_count = fail_count + 1;
     end else begin
       $display("✓ PASS: A=%b, B=%b, C=%b → Y=%b (correct)", A, B, C, Y);
@@ -33,7 +33,7 @@ module tb_week5_ex4_simple_circuit_assign;
     
     A = 0; B = 0; C = 1; #10;
     if (Y !== ((~A & ~B) | (B & C))) begin
-      $display("✗ FAIL: A=%b, B=%b, C=%b → Expected Y=%b, got Y=%b", A, B, C, (~A & ~B) | (B & C), Y);
+      $display("✗ WRONG: A=%b, B=%b, C=%b → Expected Y=%b, got Y=%b", A, B, C, (~A & ~B) | (B & C), Y);
       fail_count = fail_count + 1;
     end else begin
       $display("✓ PASS: A=%b, B=%b, C=%b → Y=%b (correct)", A, B, C, Y);
@@ -42,7 +42,7 @@ module tb_week5_ex4_simple_circuit_assign;
     
     A = 0; B = 1; C = 0; #10;
     if (Y !== ((~A & ~B) | (B & C))) begin
-      $display("✗ FAIL: A=%b, B=%b, C=%b → Expected Y=%b, got Y=%b", A, B, C, (~A & ~B) | (B & C), Y);
+      $display("✗ WRONG: A=%b, B=%b, C=%b → Expected Y=%b, got Y=%b", A, B, C, (~A & ~B) | (B & C), Y);
       fail_count = fail_count + 1;
     end else begin
       $display("✓ PASS: A=%b, B=%b, C=%b → Y=%b (correct)", A, B, C, Y);
@@ -51,7 +51,7 @@ module tb_week5_ex4_simple_circuit_assign;
     
     A = 0; B = 1; C = 1; #10;
     if (Y !== ((~A & ~B) | (B & C))) begin
-      $display("✗ FAIL: A=%b, B=%b, C=%b → Expected Y=%b, got Y=%b", A, B, C, (~A & ~B) | (B & C), Y);
+      $display("✗ WRONG: A=%b, B=%b, C=%b → Expected Y=%b, got Y=%b", A, B, C, (~A & ~B) | (B & C), Y);
       fail_count = fail_count + 1;
     end else begin
       $display("✓ PASS: A=%b, B=%b, C=%b → Y=%b (correct)", A, B, C, Y);
@@ -60,7 +60,7 @@ module tb_week5_ex4_simple_circuit_assign;
     
     A = 1; B = 0; C = 0; #10;
     if (Y !== ((~A & ~B) | (B & C))) begin
-      $display("✗ FAIL: A=%b, B=%b, C=%b → Expected Y=%b, got Y=%b", A, B, C, (~A & ~B) | (B & C), Y);
+      $display("✗ WRONG: A=%b, B=%b, C=%b → Expected Y=%b, got Y=%b", A, B, C, (~A & ~B) | (B & C), Y);
       fail_count = fail_count + 1;
     end else begin
       $display("✓ PASS: A=%b, B=%b, C=%b → Y=%b (correct)", A, B, C, Y);
@@ -69,7 +69,7 @@ module tb_week5_ex4_simple_circuit_assign;
     
     A = 1; B = 0; C = 1; #10;
     if (Y !== ((~A & ~B) | (B & C))) begin
-      $display("✗ FAIL: A=%b, B=%b, C=%b → Expected Y=%b, got Y=%b", A, B, C, (~A & ~B) | (B & C), Y);
+      $display("✗ WRONG: A=%b, B=%b, C=%b → Expected Y=%b, got Y=%b", A, B, C, (~A & ~B) | (B & C), Y);
       fail_count = fail_count + 1;
     end else begin
       $display("✓ PASS: A=%b, B=%b, C=%b → Y=%b (correct)", A, B, C, Y);
@@ -78,7 +78,7 @@ module tb_week5_ex4_simple_circuit_assign;
     
     A = 1; B = 1; C = 0; #10;
     if (Y !== ((~A & ~B) | (B & C))) begin
-      $display("✗ FAIL: A=%b, B=%b, C=%b → Expected Y=%b, got Y=%b", A, B, C, (~A & ~B) | (B & C), Y);
+      $display("✗ WRONG: A=%b, B=%b, C=%b → Expected Y=%b, got Y=%b", A, B, C, (~A & ~B) | (B & C), Y);
       fail_count = fail_count + 1;
     end else begin
       $display("✓ PASS: A=%b, B=%b, C=%b → Y=%b (correct)", A, B, C, Y);
@@ -87,7 +87,7 @@ module tb_week5_ex4_simple_circuit_assign;
     
     A = 1; B = 1; C = 1; #10;
     if (Y !== ((~A & ~B) | (B & C))) begin
-      $display("✗ FAIL: A=%b, B=%b, C=%b → Expected Y=%b, got Y=%b", A, B, C, (~A & ~B) | (B & C), Y);
+      $display("✗ WRONG: A=%b, B=%b, C=%b → Expected Y=%b, got Y=%b", A, B, C, (~A & ~B) | (B & C), Y);
       fail_count = fail_count + 1;
     end else begin
       $display("✓ PASS: A=%b, B=%b, C=%b → Y=%b (correct)", A, B, C, Y);
@@ -95,7 +95,7 @@ module tb_week5_ex4_simple_circuit_assign;
     end
     
     $display("\n─────────────────────────────────────────────────────────────────");
-    $display("Functional Tests: %0d passed, %0d failed", pass_count, fail_count);
+    $display("Functional Tests: %0d passed, %0d incorrect", pass_count, fail_count);
     
     if (pass_count == 8 ) begin
       $display("\n╔═══════════════════════════════════════════════════════════════╗");
@@ -103,7 +103,7 @@ module tb_week5_ex4_simple_circuit_assign;
       $display("╚═══════════════════════════════════════════════════════════════╝\n");
     end else begin
       $display("\n╔═══════════════════════════════════════════════════════════════╗");
-      $display("║  ✗ SOME TESTS FAILED - week5_ex4_simple_circuit_assign     ║");
+      $display("║  ✗ SOME TESTS INCORRECT - week5_ex4_simple_circuit_assign     ║");
       $display("╚═══════════════════════════════════════════════════════════════╝\n");
     end
     

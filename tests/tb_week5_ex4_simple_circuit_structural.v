@@ -21,7 +21,7 @@ module tb_week5_ex4_simple_circuit_structural;
       style_check_passed = 1;
       $display("✓ Style check PASSED: Found 'wire' keyword (structural style)");
     end else begin
-      $display("✗ Style check FAILED: 'wire' keyword not found (should use structural style)");
+      $display("✗ Style check INCORRECT: 'wire' keyword not found (should use structural style)");
     end
   end
   
@@ -36,7 +36,7 @@ module tb_week5_ex4_simple_circuit_structural;
     // Test all 8 combinations
     A = 0; B = 0; C = 0; #10;
     if (Y !== ((~A & ~B) | (B & C))) begin
-      $display("✗ FAIL: A=%b, B=%b, C=%b → Expected Y=%b, got Y=%b", A, B, C, (~A & ~B) | (B & C), Y);
+      $display("✗ WRONG: A=%b, B=%b, C=%b → Expected Y=%b, got Y=%b", A, B, C, (~A & ~B) | (B & C), Y);
       fail_count = fail_count + 1;
     end else begin
       $display("✓ PASS: A=%b, B=%b, C=%b → Y=%b (correct)", A, B, C, Y);
@@ -45,7 +45,7 @@ module tb_week5_ex4_simple_circuit_structural;
     
     A = 0; B = 0; C = 1; #10;
     if (Y !== ((~A & ~B) | (B & C))) begin
-      $display("✗ FAIL: A=%b, B=%b, C=%b → Expected Y=%b, got Y=%b", A, B, C, (~A & ~B) | (B & C), Y);
+      $display("✗ WRONG: A=%b, B=%b, C=%b → Expected Y=%b, got Y=%b", A, B, C, (~A & ~B) | (B & C), Y);
       fail_count = fail_count + 1;
     end else begin
       $display("✓ PASS: A=%b, B=%b, C=%b → Y=%b (correct)", A, B, C, Y);
@@ -54,7 +54,7 @@ module tb_week5_ex4_simple_circuit_structural;
     
     A = 0; B = 1; C = 0; #10;
     if (Y !== ((~A & ~B) | (B & C))) begin
-      $display("✗ FAIL: A=%b, B=%b, C=%b → Expected Y=%b, got Y=%b", A, B, C, (~A & ~B) | (B & C), Y);
+      $display("✗ WRONG: A=%b, B=%b, C=%b → Expected Y=%b, got Y=%b", A, B, C, (~A & ~B) | (B & C), Y);
       fail_count = fail_count + 1;
     end else begin
       $display("✓ PASS: A=%b, B=%b, C=%b → Y=%b (correct)", A, B, C, Y);
@@ -63,7 +63,7 @@ module tb_week5_ex4_simple_circuit_structural;
     
     A = 0; B = 1; C = 1; #10;
     if (Y !== ((~A & ~B) | (B & C))) begin
-      $display("✗ FAIL: A=%b, B=%b, C=%b → Expected Y=%b, got Y=%b", A, B, C, (~A & ~B) | (B & C), Y);
+      $display("✗ WRONG: A=%b, B=%b, C=%b → Expected Y=%b, got Y=%b", A, B, C, (~A & ~B) | (B & C), Y);
       fail_count = fail_count + 1;
     end else begin
       $display("✓ PASS: A=%b, B=%b, C=%b → Y=%b (correct)", A, B, C, Y);
@@ -72,7 +72,7 @@ module tb_week5_ex4_simple_circuit_structural;
     
     A = 1; B = 0; C = 0; #10;
     if (Y !== ((~A & ~B) | (B & C))) begin
-      $display("✗ FAIL: A=%b, B=%b, C=%b → Expected Y=%b, got Y=%b", A, B, C, (~A & ~B) | (B & C), Y);
+      $display("✗ WRONG: A=%b, B=%b, C=%b → Expected Y=%b, got Y=%b", A, B, C, (~A & ~B) | (B & C), Y);
       fail_count = fail_count + 1;
     end else begin
       $display("✓ PASS: A=%b, B=%b, C=%b → Y=%b (correct)", A, B, C, Y);
@@ -81,7 +81,7 @@ module tb_week5_ex4_simple_circuit_structural;
     
     A = 1; B = 0; C = 1; #10;
     if (Y !== ((~A & ~B) | (B & C))) begin
-      $display("✗ FAIL: A=%b, B=%b, C=%b → Expected Y=%b, got Y=%b", A, B, C, (~A & ~B) | (B & C), Y);
+      $display("✗ WRONG: A=%b, B=%b, C=%b → Expected Y=%b, got Y=%b", A, B, C, (~A & ~B) | (B & C), Y);
       fail_count = fail_count + 1;
     end else begin
       $display("✓ PASS: A=%b, B=%b, C=%b → Y=%b (correct)", A, B, C, Y);
@@ -90,7 +90,7 @@ module tb_week5_ex4_simple_circuit_structural;
     
     A = 1; B = 1; C = 0; #10;
     if (Y !== ((~A & ~B) | (B & C))) begin
-      $display("✗ FAIL: A=%b, B=%b, C=%b → Expected Y=%b, got Y=%b", A, B, C, (~A & ~B) | (B & C), Y);
+      $display("✗ WRONG: A=%b, B=%b, C=%b → Expected Y=%b, got Y=%b", A, B, C, (~A & ~B) | (B & C), Y);
       fail_count = fail_count + 1;
     end else begin
       $display("✓ PASS: A=%b, B=%b, C=%b → Y=%b (correct)", A, B, C, Y);
@@ -99,7 +99,7 @@ module tb_week5_ex4_simple_circuit_structural;
     
     A = 1; B = 1; C = 1; #10;
     if (Y !== ((~A & ~B) | (B & C))) begin
-      $display("✗ FAIL: A=%b, B=%b, C=%b → Expected Y=%b, got Y=%b", A, B, C, (~A & ~B) | (B & C), Y);
+      $display("✗ WRONG: A=%b, B=%b, C=%b → Expected Y=%b, got Y=%b", A, B, C, (~A & ~B) | (B & C), Y);
       fail_count = fail_count + 1;
     end else begin
       $display("✓ PASS: A=%b, B=%b, C=%b → Y=%b (correct)", A, B, C, Y);
@@ -107,7 +107,7 @@ module tb_week5_ex4_simple_circuit_structural;
     end
     
     $display("\n────────────────────────────────────────────────────────────");
-    $display("Functional Tests: %0d passed, %0d failed", pass_count, fail_count);
+    $display("Functional Tests: %0d passed, %0d incorrect", pass_count, fail_count);
     
     if (pass_count == 8 ) begin
       $display("\n╔══════════════════════════════════════════════════════════╗");
@@ -115,7 +115,7 @@ module tb_week5_ex4_simple_circuit_structural;
       $display("╚══════════════════════════════════════════════════════════╝\n");
     end else begin
       $display("\n╔══════════════════════════════════════════════════════════╗");
-      $display("║  ✗ SOME TESTS FAILED - week5_ex4_simple_circuit_structural ║");
+      $display("║  ✗ SOME TESTS INCORRECT - week5_ex4_simple_circuit_structural ║");
       $display("╚══════════════════════════════════════════════════════════╝\n");
     end
     
