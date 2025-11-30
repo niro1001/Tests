@@ -26,34 +26,64 @@ module tb_week5_ex6_challenge_circuit_structural;
     // Test several key combinations
     A = 0; B = 0; C = 0; D = 0; E = 0; F = 0; G = 0; #10;
     $display("Testing: A=%b, B=%b, C=%b, D=%b, E=%b, F=%b, G=%b → Y=%b", A, B, C, D, E, F, G, Y);
-    pass_count = pass_count + 1;
+    if (Y !== 1'b0 && Y !== 1'b1) begin
+      $display("✗ WRONG: Invalid output Y=%b", Y);
+      fail_count = fail_count + 1;
+    end else begin
+      $display("✓ PASS: Y=%b (valid output)", Y);
+      pass_count = pass_count + 1;
+    end
     
     A = 1; B = 1; C = 1; D = 1; E = 0; F = 0; G = 0; #10;
     $display("Testing: A=%b, B=%b, C=%b, D=%b, E=%b, F=%b, G=%b → Y=%b", A, B, C, D, E, F, G, Y);
-    pass_count = pass_count + 1;
+    if (Y !== 1'b0 && Y !== 1'b1) begin
+      $display("✗ WRONG: Invalid output Y=%b", Y);
+      fail_count = fail_count + 1;
+    end else begin
+      $display("✓ PASS: Y=%b (valid output)", Y);
+      pass_count = pass_count + 1;
+    end
     
     A = 0; B = 0; C = 0; D = 1; E = 1; F = 1; G = 1; #10;
     $display("Testing: A=%b, B=%b, C=%b, D=%b, E=%b, F=%b, G=%b → Y=%b", A, B, C, D, E, F, G, Y);
-    pass_count = pass_count + 1;
+    if (Y !== 1'b0 && Y !== 1'b1) begin
+      $display("✗ WRONG: Invalid output Y=%b", Y);
+      fail_count = fail_count + 1;
+    end else begin
+      $display("✓ PASS: Y=%b (valid output)", Y);
+      pass_count = pass_count + 1;
+    end
     
     A = 1; B = 1; C = 1; D = 0; E = 1; F = 1; G = 1; #10;
     $display("Testing: A=%b, B=%b, C=%b, D=%b, E=%b, F=%b, G=%b → Y=%b", A, B, C, D, E, F, G, Y);
-    pass_count = pass_count + 1;
+    if (Y !== 1'b0 && Y !== 1'b1) begin
+      $display("✗ WRONG: Invalid output Y=%b", Y);
+      fail_count = fail_count + 1;
+    end else begin
+      $display("✓ PASS: Y=%b (valid output)", Y);
+      pass_count = pass_count + 1;
+    end
     
     A = 1; B = 1; C = 1; D = 1; E = 1; F = 1; G = 1; #10;
     $display("Testing: A=%b, B=%b, C=%b, D=%b, E=%b, F=%b, G=%b → Y=%b", A, B, C, D, E, F, G, Y);
-    pass_count = pass_count + 1;
+    if (Y !== 1'b0 && Y !== 1'b1) begin
+      $display("✗ WRONG: Invalid output Y=%b", Y);
+      fail_count = fail_count + 1;
+    end else begin
+      $display("✓ PASS: Y=%b (valid output)", Y);
+      pass_count = pass_count + 1;
+    end
     
     $display("\n────────────────────────────────────────────────────────────");
-    $display("Functional Tests: %0d test cases executed", pass_count);
+    $display("Functional Tests: %0d passed, %0d wrong", pass_count, fail_count);
     
-    if (1) begin
+    if (pass_count == 5) begin
       $display("\n╔══════════════════════════════════════════════════════════╗");
-      $display("║  ✓ STYLE CHECK PASSED - week5_ex6_challenge_circuit_structural    ║");
+      $display("║  ✓ ALL TESTS PASSED - week5_ex6_challenge_circuit_structural      ║");
       $display("╚══════════════════════════════════════════════════════════╝\n");
     end else begin
       $display("\n╔══════════════════════════════════════════════════════════╗");
-      $display("║  ✗ STYLE CHECK WRONG - week5_ex6_challenge_circuit_structural      ║");
+      $display("║  ✗ SOME TESTS WRONG - week5_ex6_challenge_circuit_structural      ║");
       $display("╚══════════════════════════════════════════════════════════╝\n");
     end
     
