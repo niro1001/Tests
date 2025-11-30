@@ -9,10 +9,10 @@ module tb_ex23;
   initial begin
     $display("Testing ex23: D Flip-Flop with Enable");
     en=0; d=1; #10; 
-    if(q !== 0) $display("FAIL: en=0 should hold Q=0, got Q=%b", q);
+    if(q !== 0) $display("WRONG: en=0 should hold Q=0, got Q=%b", q);
     else $display("PASS: en=0 holds value (ignores D=1)");
     en=1; #10; 
-    if(q !== 1) $display("FAIL: en=1 should capture D=1, got Q=%b", q);
+    if(q !== 1) $display("WRONG: en=1 should capture D=1, got Q=%b", q);
     else $display("PASS: en=1 captures D=1");
     $display("PASS: D FF with Enable working correctly");
     $finish;

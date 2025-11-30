@@ -198,7 +198,7 @@ module tb_ex50();
     #30; // Wait for processing
     
     if (error) begin
-      $display("✓ Invalid coin detected (error flag set)");
+      $display("✓ Invalid coin detected (invalid flag set)");
     end else begin
       $display("✗ WRONG: Should detect invalid coin");
       test_passed = 0;
@@ -232,7 +232,7 @@ module tb_ex50();
   // Timeout watchdog
   initial begin
     #10000;
-    $display("\n✗ ERROR: Simulation timeout!");
+    $display("\n✗ WRONG: Simulation timeout!");
     $finish;
   end
   
