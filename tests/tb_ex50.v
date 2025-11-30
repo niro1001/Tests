@@ -75,7 +75,7 @@ module tb_ex50();
     if (total == 5'd5) begin
       $display("✓ Coin 5 NIS added correctly (total=%d)", total);
     end else begin
-      $display("✗ FAIL: Expected total=5, got %d", total);
+      $display("✗ WRONG: Expected total=5, got %d", total);
       test_passed = 0;
     end
     
@@ -91,7 +91,7 @@ module tb_ex50();
     if (total == 5'd10) begin
       $display("✓ Coin 5 NIS added correctly (total=%d)", total);
     end else begin
-      $display("✗ FAIL: Expected total=10, got %d", total);
+      $display("✗ WRONG: Expected total=10, got %d", total);
       test_passed = 0;
     end
     
@@ -105,7 +105,7 @@ module tb_ex50();
     if (dispense || state == 3'd3) begin  // Check dispense signal or DISPENSE state
       $display("✓ ALU comparison worked - dispense activated");
     end else begin
-      $display("✗ FAIL: ALU comparison failed - no dispense (state=%d)", state);
+      $display("✗ WRONG: ALU comparison failed - no dispense (state=%d)", state);
       test_passed = 0;
     end
     
@@ -116,7 +116,7 @@ module tb_ex50();
     if (change == 5'd0) begin
       $display("✓ Change calculated correctly: %d NIS (10-10=0)", change);
     end else begin
-      $display("✗ FAIL: Expected change=0, got %d", change);
+      $display("✗ WRONG: Expected change=0, got %d", change);
       test_passed = 0;
     end
     
@@ -150,7 +150,7 @@ module tb_ex50();
     if (change == 5'd5) begin
       $display("✓ ALU SUB: Change = %d NIS (10-5=5)", change);
     end else begin
-      $display("✗ FAIL: Expected change=5, got %d (state=%d)", change, state);
+      $display("✗ WRONG: Expected change=5, got %d (state=%d)", change, state);
       test_passed = 0;
     end
     
@@ -177,7 +177,7 @@ module tb_ex50();
     if (!dispense) begin
       $display("✓ ALU CMP correctly prevented dispense (10 < 15)");
     end else begin
-      $display("✗ FAIL: Should not dispense with insufficient funds");
+      $display("✗ WRONG: Should not dispense with insufficient funds");
       test_passed = 0;
     end
     
@@ -200,7 +200,7 @@ module tb_ex50();
     if (error) begin
       $display("✓ Invalid coin detected (error flag set)");
     end else begin
-      $display("✗ FAIL: Should detect invalid coin");
+      $display("✗ WRONG: Should detect invalid coin");
       test_passed = 0;
     end
     
@@ -220,7 +220,7 @@ module tb_ex50();
       $display("   ALU Integration Successful!");
       $display("========================================");
     end else begin
-      $display("   ✗✗✗ TESTS FAILED ✗✗✗");
+      $display("   ✗✗✗ TESTS WRONG ✗✗✗");
       $display("   Check ALU implementation");
       $display("========================================");
     end

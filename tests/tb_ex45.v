@@ -8,13 +8,13 @@ module tb_ex45;
   initial begin
     $display("Testing ex45: Complete ALU (8 Operations)");
     a=5'd5; b=5'd3; op=3'b000; #1; 
-    if(result !== 5'd8) $display("FAIL: ADD 5+3 should be 8, got %d", result);
+    if(result !== 5'd8) $display("WRONG: ADD 5+3 should be 8, got %d", result);
     else $display("PASS: ADD: 5+3=8");
     op=3'b001; #1; 
-    if(result !== 5'd2) $display("FAIL: SUB 5-3 should be 2, got %d", result);
+    if(result !== 5'd2) $display("WRONG: SUB 5-3 should be 2, got %d", result);
     else $display("PASS: SUB: 5-3=2");
     op=3'b101; #1; 
-    if(result !== ~5'd5) $display("FAIL: NOT ~5 should be %d, got %d", ~5'd5, result);
+    if(result !== ~5'd5) $display("WRONG: NOT ~5 should be %d, got %d", ~5'd5, result);
     else $display("PASS: NOT: ~5=%d", result);
     $display("PASS: Complete ALU working correctly");
     $finish;
